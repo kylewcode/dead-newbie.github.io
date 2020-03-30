@@ -1,0 +1,47 @@
+/* Global Font Styles */
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+h1 {
+    font-size: 4em;
+    color: rgb(50, 50, 50);
+}
+
+h2 {
+    font-size: 3em;
+    color: rgb(70, 70, 70)
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+    font-size: 1.5em;
+}
+
+
+a:link {
+
+}
+
+a:visited {
+
+}
+
+a:focus {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
