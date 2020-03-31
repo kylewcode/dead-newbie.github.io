@@ -1,0 +1,288 @@
+/* Global Font Styles */
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 4em;
+    color: rgb(50, 50, 50);
+}
+
+h2 {
+    font-size: 3em;
+    color: rgb(70, 70, 70)
+}
+
+h3 {
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+}
+
+p, a, pre {
+    font-size: 1.5em;
+}
+
+a:link {
+    color: rgb(0, 120, 215);
+}
+
+a:visited {
+    color: rgb(121, 201, 238);
+}
+
+a:focus {
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+a:active {
+    color: rgb(255, 91, 73);
+}
+
+/* Header Styles */
+
+.header-flexbox {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.main-title, .sub-title {
+    width: 100%;
+    border-bottom: black solid 1px;
+}
+
+.main-title {
+    background-color: rgb(27, 27, 27);
+}
+
+.main-title h1 {
+    text-align: center;
+    color: rgb(255,255,255);
+}
+
+.main-title span:first-child {
+    color: rgb(0, 120, 215);
+}
+
+.main-title span:nth-child(2) {
+    color: rgb(179, 135, 78);
+}
+
+.main-title::first-letter {
+    color: rgb(121, 201, 238);
+}
+
+.main-title span:last-child {
+    color: rgb(91, 175, 126);
+}
+
+.sub-title h2 {
+    text-align: center;
+    font-style: italic;
+    font-weight: 100;
+}
+
+/* Nav Styles */
+
+header li {
+    list-style: none;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    padding: 5px;
+}
+
+header ul {
+    width: 320px;
+    padding: 0px;
+    margin: 0px auto;
+}
+
+nav {
+    text-align: center;
+    margin: 0px;
+    padding: 0em;
+}
+
+
+
+.nav-links a {
+    color: rgb(70, 70, 70);
+    text-decoration: none;
+}
+
+.nav-links a:link, .nav-links a:visited {
+    color: rgb(70, 70, 70);
+}
+
+.nav-links a:focus {
+    border: 2px solid rgb(121, 201, 238);
+    background-color: rgb(255,255,255);
+}
+
+.nav-links a:hover {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(48,48,48,1) 50%, rgba(255,255,255,0) 75%);
+    color: rgb(255, 255, 255);
+    padding: 5px 40%;
+}
+
+.nav-links a:active {
+    color: rgb(255, 91, 73);
+}
+
+/* Body Styles */
+
+.main-page p {
+    color: rgb(255, 255, 255);
+    margin: 0px;
+}
+
+.main-page span {
+    background-color: rgb(255, 255, 255);
+    color: rgb(27, 27, 27);
+    font-weight: bold;
+}
+
+/* Command Line Design */
+
+.console-container {
+    width: 100%;
+    height: 400px;
+    margin: 0px;
+    padding: 10px 0px;
+    background-color: rgb(209, 209, 209);
+}
+
+.console {
+    font-family: 'Fira Mono';
+    max-width: 425px;
+    height: 350px;
+    box-sizing: border-box;
+    margin: auto;
+  }
+  
+  .console-title {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #555;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #DDD;
+  }
+  
+  .console .consolebody {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-sizing: border-box;
+    padding: 20px;
+    height: calc(100% - 40px);
+    overflow: scroll;
+    background-color: #000;
+    color: #63de00;
+    text-align: center;
+  }
+  
+  .console .consolebody p {
+    line-height: 1.5rem;
+  }
+
+  .floating-text {
+    position: relative;
+    left: 25px;
+  }
+
+/* Contact Section Styles */
+
+.connect-title {
+    text-align: center;
+}
+
+.social-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+.social-box ul {
+    padding: 0px;
+}
+
+.social-box li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.social-box a:visited {
+    color: rgb(0, 120, 215)
+}
+
+.social-box a:focus {
+    background-color: rgb(255,255,255);
+    color: rgb(27, 27, 27);
+}
+
+i {
+    font-size: 3em;
+}
+
+/*Footer Styles*/
+
+footer {
+    background-color: rgb(94, 94, 94);
+    padding: 1.5em 0.5em;
+    text-align: center;
+}
+
+footer p {
+    margin: 0px;
+    color: rgb(255,255,255);
+}
+
+/*Responsive Styles*/
+
+
+/*--Responsive Nav Styles*/
+
+@media (min-width: 320px) {
+    header ul {
+        margin: 2em auto;
+    }
+
+    header li {
+        border: 1px solid rgb(172, 172, 172);
+    }
+}
+
+@media (min-width: 768px) {
+    header ul {
+        width: 100%;
+    }
+
+    header li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .nav-links a:focus {
+        border: 2px solid rgb(121, 201, 238);
+        background-color: rgb(255,255,255);
+    }
+    
+    .nav-links a:hover {
+        background: rgb(245, 245, 245);
+        color: rgb(0, 255, 106);
+        padding: 0px 12px;
+    }
+}
