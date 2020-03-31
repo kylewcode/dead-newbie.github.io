@@ -63,6 +63,7 @@ a:active {
 
 .main-title h1 {
     text-align: center;
+    color: rgb(255,255,255);
 }
 
 .main-title span:first-child {
@@ -134,15 +135,20 @@ nav {
 
 /* Body Styles */
 
-.main-page pre {
-    word-break: break-all;
+.main-page {
+    width: 100%;
     background-color: rgb(27, 27, 27);
 }
 
-.main-page pre {
+.main-page-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.main-page p {
+    word-break: break-all;
     color: rgb(255, 255, 255);
-    padding: 10%;
-    margin-top: 0px;
+    margin: 40px 0px;
 }
 
 .main-page span {
@@ -197,4 +203,19 @@ footer {
 footer p {
     margin: 0px;
     color: rgb(255,255,255);
+}
+
+/*Responsive Styles*/
+
+
+/*--Responsive Nav Styles*/
+
+@media (min-width: 320px) {
+    header ul {
+        margin: 2em auto;
+    }
+
+    header li {
+        border: 1px solid rgb(172, 172, 172);
+    }
 }
