@@ -1,0 +1,59 @@
+/* -----Project Page Styles----- */
+
+body > h2 {
+    text-align: center;
+    font-size: 7em;
+    letter-spacing: 0.9rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    background-color: darkgray;
+    padding: 50px;
+}
+
+.project-tile {
+    text-align: center;
+    background-color: lightgray;
+    box-shadow: 17px 11px 30px -15px rgba(0,0,0,0.75);
+    padding-bottom: 4em;
+}
+
+.projects-grid p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3em;
+    color: rgb(68, 68, 68);
+}
+
+.projects-grid img {
+    max-width: 300px;
+}
+
+/* Responsive Project Page Styles */
+
+@media (max-width: 1214px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 826px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 398px) {
+    .projects-grid {
+        padding: 0px;
+    }
+
+    .project-tile {
+        box-shadow: none;
+    }
+}
+
+/*-----End Project Page Styles-----*/
+
