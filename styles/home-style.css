@@ -38,7 +38,6 @@ a:visited {
 }
 
 a:focus {
-    background-color: rgb(50, 50, 50);
     color: rgb(255, 255, 255);
 }
 
@@ -52,23 +51,21 @@ a:active {
 
 /* Header Styles */
 
-.header-flexbox {
-    display: flex;
-    flex-flow: column wrap;
-}
-
-.main-title, .sub-title {
+.sub-title {
     width: 100%;
     border-bottom: black solid 1px;
 }
 
 .main-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(27, 27, 27);
 }
 
 .main-title h1 {
-    text-align: center;
     color: rgb(255,255,255);
+    margin: 1em;
 }
 
 .main-title span:first-child {
@@ -93,47 +90,43 @@ a:active {
     font-weight: 100;
 }
 
-/* Nav Styles */
+/* Nav Styles Mobile-First*/
 
 header li {
     list-style: none;
-    border-bottom: 1px solid rgb(172, 172, 172);
     padding: 5px;
+    min-width: 8em;
+    text-align: center;
+    border: 1px solid rgb(172, 172, 172);
+    border-radius: 3px;
 }
 
 header ul {
     width: 320px;
     padding: 0px;
-    margin: 0px auto;
+    margin-right: 2em;
 }
 
 nav {
-    text-align: center;
     margin: 0px;
     padding: 0em;
 }
 
-
-
 .nav-links a {
-    color: rgb(70, 70, 70);
+    color: rgb(245, 245, 245);
     text-decoration: none;
 }
 
 .nav-links a:link, .nav-links a:visited {
-    color: rgb(70, 70, 70);
+    color: rgb(245, 245, 245);
 }
 
 .nav-links a:focus {
     border: 2px solid rgb(121, 201, 238);
-    background-color: rgb(255,255,255);
 }
 
 .nav-links a:hover {
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 25%, rgba(48,48,48,1) 50%, rgba(255,255,255,0) 75%);
-    color: rgb(255, 255, 255);
-    padding: 5px 40%;
+    color: rgb(0, 120, 215);
 }
 
 .nav-links a:active {
@@ -240,6 +233,8 @@ i {
 /*Footer Styles*/
 
 footer {
+    position: sticky;
+    bottom: 0;
     background-color: rgb(94, 94, 94);
     padding: 1.5em 0.5em;
     text-align: center;
@@ -255,17 +250,7 @@ footer p {
 
 /*--Responsive Nav Styles*/
 
-@media (min-width: 320px) {
-    header ul {
-        margin: 2em auto;
-    }
-
-    header li {
-        border: 1px solid rgb(172, 172, 172);
-    }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 865px) {
     header ul {
         width: 100%;
     }
@@ -274,15 +259,20 @@ footer p {
         display: inline-block;
         margin-right: 10px;
     }
+}
 
-    .nav-links a:focus {
-        border: 2px solid rgb(121, 201, 238);
-        background-color: rgb(255,255,255);
+@media (min-width: 694px) {
+    nav {
+        margin: 10px 0px;
     }
-    
-    .nav-links a:hover {
-        background: rgb(245, 245, 245);
-        color: rgb(0, 255, 106);
-        padding: 0px 12px;
+}
+
+@media (max-width: 591px) {
+    .main-title {
+        flex-direction: column;
+    }
+
+    header ul {
+        margin: 0px;
     }
 }
