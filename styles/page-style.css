@@ -57,3 +57,20 @@ body > h2 {
 
 /*-----End Project Page Styles-----*/
 
+
+
+/*-----Resume Page Styles-----*/
+
+.resume-box {
+    margin: 100px 0px;
+    padding-bottom: 2em;
+}
+
+.button-wrapper {
+    background-color: rgb(212, 212, 212);
+    border-radius: 10px;
+    width: max-content;
+    margin: 0px auto;
+    padding: 1.5em;
+    text-align: center;
+}
