@@ -74,3 +74,12 @@ body > h2 {
     padding: 1.5em;
     text-align: center;
 }
+
+/*-----About Page Styles-----*/
+
+body article p {
+    background-color: rgb(68, 68, 68);
+    color: rgb(212, 212, 212);
+    padding: 2em 10%;
+    line-height: 1.5em;
+}
