@@ -148,12 +148,16 @@ nav {
 
 /* Command Line Design */
 
-.console-container {
+main {
     width: 100%;
     height: 400px;
     margin: 0px;
     padding: 10px 0px;
-    background-color: rgb(209, 209, 209);
+    background: url(/images/laptop-desk-notebook-w1920-darken.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .console {
@@ -180,7 +184,6 @@ nav {
     box-sizing: border-box;
     padding: 20px;
     height: calc(100% - 40px);
-    overflow: scroll;
     background-color: #000;
     color: #63de00;
     text-align: center;
@@ -197,31 +200,25 @@ nav {
 
 /* Contact Section Styles */
 
-.connect-title {
+aside {
     text-align: center;
 }
 
-.social-box {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0px;
-}
-
-.social-box ul {
+aside ul {
     padding: 0px;
+    list-style: none;
 }
 
-.social-box li {
-    list-style: none;
+aside ul li {
     display: inline-block;
     margin: 0px 10px;
 }
 
-.social-box a:visited {
+aside ul a:visited {
     color: rgb(0, 120, 215)
 }
 
-.social-box a:focus {
+aside ul a:focus {
     background-color: rgb(255,255,255);
     color: rgb(27, 27, 27);
 }
