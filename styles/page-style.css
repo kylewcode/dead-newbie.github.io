@@ -1,8 +1,8 @@
 /* -----Project Page Styles----- */
 
-body > h2 {
+.projects-header {
     text-align: center;
-    font-size: 7em;
+    font-size: 6em;
     letter-spacing: 0.9rem;
 }
 
