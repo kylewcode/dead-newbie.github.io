@@ -142,6 +142,7 @@ body article p {
     color: rgb(255, 255, 255);
 }
 
+/*---Usedi in multiple pages---*/
 .background-image {
     width: 100%;
     margin: 0px;
@@ -158,4 +159,5 @@ body article p {
 .contact-wrapper {
     text-align: center;
     background-color: rgb(212, 212, 212);
+    padding-top: 50px;
 }
