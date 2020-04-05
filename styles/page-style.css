@@ -61,10 +61,63 @@ body > h2 {
 
 /*-----Resume Page Styles-----*/
 
-.resume-box {
-    margin: 100px 0px;
-    padding-bottom: 2em;
+.resume-wrapper {
+    width: 100%;
+    height: 100%;
 }
+
+.resume-wrapper h2 {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 7em;
+    letter-spacing: 0.9rem;
+}
+
+.resume-content {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    margin: 20px auto;
+    padding: 4em;
+}
+
+.resume-content section:first-child {
+    padding: 4em;
+}
+
+.resume-content h3, h4, h5 {
+    color: rgb(0, 0, 0);
+    margin: 3px;
+}
+
+.resume-content h4 {
+    color: rgb(121, 201, 238);
+}
+
+.resume-content h2, .resume-content h3, .resume-content h3 + p {
+    text-align: center;
+}
+
+.resume-content p {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    padding: initial;
+    line-height: initial;
+    margin: 3px;
+}
+
+.resume-content ul {
+    font-size: 1.5em;
+    line-height: 2em;
+    margin-top: 0px;
+}
+
+.resume-content span, .resume-content .skill-titles {
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(0, 120, 215);
+}
+
+    /*Resume Download Box*/
 
 .button-wrapper {
     background-color: rgb(212, 212, 212);
