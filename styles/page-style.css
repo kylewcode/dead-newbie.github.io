@@ -135,6 +135,22 @@ body article p {
     color: rgb(212, 212, 212);
     padding: 2em 10%;
     line-height: 1.5em;
+    margin-top: 0px;
+}
+
+.about-header-h2 {
+    color: rgb(255, 255, 255);
+}
+
+.background-image {
+    width: 100%;
+    margin: 0px;
+    padding: 60px 0px;
+    background: url(/images/laptop-desk-notebook-w1920-darken.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /*-----Contact Page Styles-----*/
