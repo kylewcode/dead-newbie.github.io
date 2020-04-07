@@ -1,0 +1,263 @@
+/*Global styles*/
+
+html {
+    font-size: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/*General styles*/
+
+main {
+    margin-top: 210px;
+}
+
+iframe {
+    border: 0;
+}
+
+/*Header styles*/
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 2em;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 100px;
+}
+
+.logo > img {
+    width: 100%;
+}
+
+nav {
+    margin-right: 30px;
+}
+
+nav li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px 20px;
+    font-family: 'Slabo 27px', serif;
+    font-size: 2em;
+}
+
+nav a {
+    text-decoration: none;
+    color: gray;
+}
+
+/*Form styles*/
+
+form {
+    margin: -40px 0px 80px 0px;
+}
+
+form label {
+    font-family: 'Slabo 27px', serif;
+    font-size: 3em;
+    display: block;
+    text-align: center;
+}
+
+input[type="email"], input[type="submit"] {
+    display: block;
+    margin: 15px auto;
+}
+
+input[type="email"] {
+    width: 250px;
+    height: 25px;
+}
+
+input[type="submit"] {
+    background: orange;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+/*Product description styles*/
+
+.grid {
+    display: grid;
+    width: 80%;
+    margin: auto;
+    grid-template-columns: 1fr 5fr;
+    padding-left: 40px;
+    align-items: center;
+    grid-gap: 20px;
+}
+
+.list-image {
+    width: 50px;
+    padding-left: 40px;
+}
+
+.grid dt {
+    font-family: 'Slabo 27px', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.grid dd {
+    font-size: 1.5em;
+}
+
+/*Video style*/
+
+#video {
+    display: block;
+    margin: 75px auto;
+    width: 100%;
+    max-width: 560px;
+}
+
+/*Product box styles*/
+
+.products-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.product-box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #260C0C;
+    margin-right: 20px;
+}
+
+.product-box:last-child {
+    margin-right: 0px;
+}
+
+.product-title {
+    background: lightgray;
+    font: 2em 'Slabo 27px', serif;
+    text-align: center;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.product-price {
+    font: 2em 'Slabo 27px', serif;
+    text-align: center;
+}
+
+.product-box :nth-child(3) {
+    font-size: 1.5em;
+    line-height: 2;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.product-box button {
+    background: yellow;
+    padding: 10px 20px;
+    font-size: 1.75em;
+}
+
+.purchase-bttn {
+    text-align: center;
+    margin: 25px;
+}
+
+/*Footer style*/
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    background: lightgray;
+    margin-top: 30px;
+}
+
+.footer-container {
+    margin-right: 15px;
+}
+
+footer li {
+    list-style: none;
+    display: inline;
+}
+
+footer p {
+    margin-left: 20px;
+}
+
+/*Mobile styles*/
+
+@media (max-width: 710px) {
+    
+    /*Mobile tablet header styles*/
+    
+    header {
+        flex-flow: column wrap;
+        justify-content: center;
+        padding: 10px 0px;
+    }
+    
+    header li {
+        display: block;
+        margin: 0px auto;
+    }
+    
+    nav {
+        margin-right: 0px;
+    }
+    
+    nav ul {
+        padding-inline-start: 0px;
+        text-align: center;
+    }
+    
+    /*Mobile tablet pricing box styles*/
+    
+    .products-flex {
+        flex-flow: column;
+        align-items: center;
+    }
+    
+    .product-box {
+        margin: 20px 0px 0px 0px;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    
+    /*Mobile large header styles*/
+    
+    header {
+        padding: 10px 0px 0px 0px;  
+    }
+    
+    /*Mobile large description list styles*/
+    
+    .grid {
+        padding: 0px;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    
+    .grid dd {
+        margin-inline-start: 0px;
+    }
+    
+    .list-image {
+        padding: 0px;
+        display: none;
+    }
+    
+    dl {
+        text-align: center;
+    }
+    
+}
