@@ -1,0 +1,84 @@
+#main {
+    display: grid;
+    grid-template-rows: 300px 1fr auto;
+}
+
+#title {
+    color: white;
+    font-family: Geneva, sans-serif;
+    text-align: right;
+    padding: 0px 20px 0px 0px;
+    background-image: url("https://movietvtechgeeks.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/05/jimmy-page-playing-stairway-to-heaven-led-zeppelin-images.jpg.webp");
+    background-size: cover;
+    background-position: top center;
+    
+}
+
+#tribute-info {
+    background-color: #EBF5FB;
+    padding: 0px 10px 0px 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lists {
+    text-align: left;
+}
+
+li {
+    margin-top: 10px;
+}
+
+#img-div {
+    background-color: #FDFEFE;
+    border-radius: 25px;
+    margin: 25px;
+}
+
+#image {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0px auto 0px auto;
+}
+
+#img-caption {
+    text-align: center;
+    
+}
+
+#footer {
+    font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#tribute-link {
+    text-decoration: none;
+    color: blue;
+    background-color: #DDDD;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 10px;
+}
+
+#tribute-link:hover {
+    color: red;
+    transition: color .9s;
+}
+
+/*Responsive Styles*/
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+}
