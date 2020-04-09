@@ -152,6 +152,8 @@ body article p {
 
 .about-header-h2 {
     color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 5em;
 }
 
 /*---Usedi in multiple pages---*/
