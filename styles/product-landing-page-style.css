@@ -214,7 +214,6 @@ footer p {
     }
     
     nav ul {
-        padding-inline-start: 0px;
         text-align: center;
     }
     
@@ -248,7 +247,7 @@ footer p {
     }
     
     .grid dd {
-        margin-inline-start: 0px;
+        margin-left: 0px;
     }
     
     .list-image {
