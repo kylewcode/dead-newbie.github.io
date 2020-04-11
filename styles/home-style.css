@@ -102,7 +102,7 @@ a:active {
 
 header li {
     list-style: none;
-    padding: 5px;
+    /*padding: 5px;*/
     min-width: 8em;
     text-align: center;
     border: 1px solid rgb(172, 172, 172);
@@ -121,8 +121,10 @@ nav {
 }
 
 .nav-links a {
+    display: block;
     color: rgb(245, 245, 245);
     text-decoration: none;
+    padding: 0.5rem 0rem;
 }
 
 .nav-links a:link, .nav-links a:visited {
@@ -138,7 +140,7 @@ nav {
 }
 
 .nav-links a:active {
-    color: rgb(255, 91, 73);
+    background-color: rgb(121, 201, 238);
 }
 
 /* Body Styles */
