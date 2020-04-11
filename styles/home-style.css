@@ -174,9 +174,9 @@ main {
     height: 350px;
     box-sizing: border-box;
     margin: auto;
-  }
-  
-  .console-title {
+}
+
+.console-title {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     background-color: #555;
@@ -184,9 +184,9 @@ main {
     line-height: 45px;
     text-align: center;
     color: #DDD;
-  }
-  
-  .console .consolebody {
+}
+
+.console .consolebody {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-sizing: border-box;
@@ -195,16 +195,16 @@ main {
     background-color: #000;
     color: #63de00;
     text-align: center;
-  }
-  
-  .console .consolebody p {
-    line-height: 1.5rem;
-  }
+}
 
-  .floating-text {
+.console .consolebody p {
+    line-height: 1.5rem;
+}
+
+.floating-text {
     position: relative;
     left: 25px;
-  }
+}
 
 /* Contact Section Styles */
 
@@ -238,16 +238,28 @@ i {
 /*Footer Styles*/
 
 footer {
-    position: sticky;
+    position: absolute;
     bottom: 0;
+    width: 100%;
     background-color: rgb(94, 94, 94);
-    padding: 1.5em 0.5em;
+    padding: 1rem 0rem;
     text-align: center;
 }
 
 footer p {
     margin: 0px;
     color: rgb(255,255,255);
+}
+
+/*Footer not sticking to bottom fix*/
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 8rem;    /* Footer height */
 }
 
 /*Responsive Styles*/
@@ -259,7 +271,7 @@ footer p {
     header ul {
         width: 100%;
     }
-
+    
     header li {
         display: inline-block;
         margin-right: 10px;
@@ -276,7 +288,7 @@ footer p {
     .main-title {
         flex-direction: column;
     }
-
+    
     header ul {
         margin: 0px;
     }
