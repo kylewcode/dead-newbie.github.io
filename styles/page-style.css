@@ -1,11 +1,5 @@
 /* -----Project Page Styles----- */
 
-.projects-header {
-    text-align: center;
-    font-size: 6em;
-    letter-spacing: 0.9rem;
-}
-
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -155,10 +149,12 @@ body article p {
     margin-top: 0px;
 }
 
-.about-header-h2 {
-    color: rgb(255, 255, 255);
+/*-----JS 30 page------*/
+.js-30-links {
     text-align: center;
-    font-size: 5em;
+    margin-bottom: 100px;
+    padding-bottom: 3rem;
+    border-bottom: black 1px solid;
 }
 
 /*---Usedi in multiple pages---*/

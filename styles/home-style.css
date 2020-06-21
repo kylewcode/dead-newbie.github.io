@@ -46,7 +46,7 @@ a:visited {
 }
 
 a:focus {
-    color: rgb(255, 255, 255);
+    color: rgb(91, 175, 126);
 }
 
 a:hover {
@@ -55,6 +55,13 @@ a:hover {
 
 a:active {
     color: rgb(255, 91, 73);
+}
+
+.page-header {
+    text-align: center;
+    font-size: 6em;
+    letter-spacing: 0.9rem;
+    color: rgb(255, 255, 255);
 }
 
 /* Header Styles */
@@ -293,5 +300,13 @@ footer p {
     
     header ul {
         margin: 0px;
+    }
+}
+
+/*--Responsive Misc Styles*/
+
+@media (max-width: 767px) {
+    .page-header {
+        font-size: 4em;
     }
 }

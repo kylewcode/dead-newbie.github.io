@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="../styles/drum-kit-style.css">
+</head>
+<body>
+    
+    <div class="button-wrap">
+        <h1>Ready to rock?</h1>
+        <a class="myButton">Yeah!</a>
+    </div>
+    <div class="keys remove">
+        <div class="top-row">
+            <div data-key="81" class="key">
+                <kbd>Q</kbd>
+                <span class="sound">crash 1</span>
+            </div>
+            <div data-key="87" class="key">
+                <kbd>W</kbd>
+                <span class="sound">tom hi</span>
+            </div>
+            <div data-key="69" class="key">
+                <kbd>E</kbd>
+                <span class="sound">ride</span>
+            </div>
+            <div data-key="82" class="key">
+                <kbd>R</kbd>
+                <span class="sound">crash 2</span>
+            </div>
+        </div>
+        <div class="mid-row">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="sound">hihat</span>
+            </div>
+            <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="sound">snare</span>
+            </div>
+            <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="sound">kick</span>
+            </div>
+            <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="sound">mid tom</span>
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="key hidden">
+                <kbd>V</kbd>
+            </div>
+            <div class="key hidden">
+                <kbd>V</kbd>
+            </div>
+            <div class="key hidden">
+                <kbd>V</kbd>
+            </div>
+            <div data-key="86" class="key">
+                <kbd>V</kbd>
+                <span class="sound">low tom</span>
+            </div>
+        </div>
+    </div>
+    
+    <audio data-key="81" src="../sounds/bonzoCrash1.wav"></audio>
+    <audio data-key="87" src="../sounds/bonzoTomHigh.wav"></audio>
+    <audio data-key="69" src="../sounds/bonzoRide.wav"></audio>
+    <audio data-key="82" src="../sounds/bonzoCrash1.wav"></audio>
+    <audio data-key="65" src="../sounds/bonzoHH.wav"></audio>
+    <audio data-key="83" src="../sounds/bonzoSnare.wav"></audio>
+    <audio data-key="68" src="../sounds/bonzoKick.wav"></audio>
+    <audio data-key="70" src="../sounds/bonzoTomMid.wav"></audio>
+    <audio data-key="86" src="../sounds/bonzoTomLow.wav"></audio>
+    
+    <script>
+        // Grab button element
+        const bttn = document.querySelector('.myButton');
+        
+        // Store value of valid keyboard key codes for easy validation. Applies for lowercase and capital letters.
+        const keyArray = [81,87,69,82,65,83,68,70,86];
+        
+        // This function hides the opening text and displays the keys.
+        function handleClick() {
+            const bttnWrap = document.querySelector('.button-wrap');
+            const keys = document.querySelector('.keys');
+            bttnWrap.classList.add('remove');
+            keys.classList.remove('remove');
+        }
+        
+        // This function animates the buttons when they are played.
+        function animateBttn(key) {
+            key.classList.add('playing');
+            setTimeout(() => { key.classList.remove('playing')}, 75);
+        }
+        
+        // This function handles the actual playing of the audio element.
+        async function playAudio(code) {
+            try {
+                const audio = document.querySelector(`audio[data-key="${code}"]`);
+                const key = document.querySelector(`div[data-key="${code}"]`);
+                await audio.play();
+                animateBttn(key);
+                audio.currentTime = 0;
+            } catch(err) {
+                alert(`There was a problem playing the audio: ${err}`);
+            }
+        }
+        
+        // This functions handles the keyup event
+        function handleKeyPress(e) {
+            const code = e.keyCode;
+            // Check to see if the key is valid. Use includes() method to return a boolean.
+            if (keyArray.includes(code)) {
+                // Trigger the appropriate button sound.
+                playAudio(code);
+            }
+            return;
+        }
+        
+        // Listen for button press to display keys.
+        bttn.addEventListener('click', handleClick);
+        
+        // Listen for the button that is pressed. 
+        window.addEventListener('keyup', handleKeyPress);
+    </script>
+    
+    
+</body>
+</html>
