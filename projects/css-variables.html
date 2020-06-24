@@ -9,7 +9,7 @@
     <div class="page-container">
         <div class="controls">
             <label>Blob Color
-                <input type="color" class="blob-color">
+                <input type="color" class="blob-color" name="base" value="#ff6347">
             </label>
             <label for="food-select">Food Type</label>
             <select name="food" id="food-select">
@@ -60,6 +60,12 @@
         
         body {
             line-height: 1;
+        }
+
+        /* CSS Variables */
+        :root {
+            --base: #ff6347;
+            --move: 0px;
         }
         
         /* Initial Styles */
@@ -121,9 +127,10 @@
             position: absolute;
             bottom: 10%;
             left: 50%;
-            background-color: tomato;
+            background-color: var(--base);
             border-radius: 50%;
             z-index: 1;
+            transform: translateX(var(--move));
         }
 
         .human {
@@ -132,7 +139,7 @@
             background-color: plum;
             position: absolute;
             left: 60%;
-            top: 0px;
+            top: -100px;
             z-index: auto;
         }
 
@@ -142,7 +149,7 @@
             background-color: white;
             position: absolute;
             left: 58%;
-            top: 50px;
+            top: -100px;
             z-index: auto;
         }
         
@@ -152,12 +159,44 @@
             background-color: black;
             position: absolute;
             left: 60%;
-            top: 100px;
+            top: -100px;
             z-index: auto;
         }
     </style>
     
     <script>
+        // How can I do this all using a single handleChange function?
+        const inputs = document.querySelectorAll('.controls input, .controls select, .controls button');
+
+        // Do something with the changed inputs: change food type, drop food, change blob color
+        function handleChanges() {
+            // const suffix = this.dataset.sizing || '';
+            // Change blob color
+            if(this.localName === 'input') {
+                document.documentElement.style.setProperty(`--${this.name}`, this.value);
+            }
+            if(this.localName === 'select') return;
+            if(this.localName === 'button') return;
+        }
+
+        // Listen for changes to the inputs
+        inputs.forEach(input => {
+            if(input.localName === 'input' || input.localName === 'select') input.addEventListener('change', handleChanges);
+            if(input.localName === 'button') input.addEventListener('click', handleChanges);
+            });
+
+
+        // // Grab inputs.
+        // const colorPicker = document.querySelector('input[type="color"]');
+
+        // // Change color of the blob.
+        // function handleColorPicker(e) {
+        //     console.log(e.target.value);
+        //     e.target.value
+        // }
+
+        // // Listen for change to color picker.
+        // colorPicker.addEventListener('change', handleColorPicker);
     </script>
     
 </body>
