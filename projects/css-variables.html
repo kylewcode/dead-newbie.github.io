@@ -14,9 +14,9 @@
             <label for="food-select">Food Type</label>
             <select name="food" id="food-select">
                 <option value="">Choose food!</option>
-                <option value="human">Human</option>
-                <option value="cow">Cow</option>
-                <option value="nuke">Nuke</option>
+                <option value="type-human" data-reset="0px">Human</option>
+                <option value="type-cow" data-reset="0px">Cow</option>
+                <option value="type-nuke" data-reset="0px">Nuke</option>
             </select>
             <label for="drop-food">Feed it!</label>
             <button id="drop-food">Drop Food</button>
@@ -66,6 +66,10 @@
         :root {
             --base: #ff6347;
             --move: 0px;
+            --type-human: none;
+            --type-cow: none;
+            --type-nuke: none;
+            --position: -100px;
         }
         
         /* Initial Styles */
@@ -113,6 +117,7 @@
         .sky {
             flex: 4;
             background-color: lightskyblue;
+            overflow: hidden;
         }
         
         .ground {
@@ -122,6 +127,7 @@
         
         /* Object Styles */
         .blob {
+            visibility: hidden;
             width: 300px;
             height: 300px;
             position: absolute;
@@ -134,34 +140,58 @@
         }
 
         .human {
+            display: var(--type-human);
             width: 50px;
             height: 100px;
             background-color: plum;
             position: absolute;
             left: 60%;
-            top: -100px;
+            top: var(--position);
             z-index: auto;
         }
 
         .cow {
+            display: var(--type-cow);
             width: 100px;
             height: 100px;
             background-color: white;
             position: absolute;
             left: 58%;
-            top: -100px;
+            top: var(--position);
             z-index: auto;
         }
         
         .nuke {
+            display: var(--type-nuke);
             width: 50px;
             height: 100px;
             background-color: black;
             position: absolute;
             left: 60%;
-            top: -100px;
+            top: var(--position);
             z-index: auto;
         }
+
+        /* Animations */
+        .human, .cow, .nuke {
+            animation-duration: 3s;
+            animation-name: fallin;
+            animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes fallin {
+            from {
+                transform: scale(0.1);
+                top: 0px;
+            }
+
+            to {
+                transform: scale(1);
+                top: 500px;
+            }
+        }
+
+
     </style>
     
     <script>
@@ -170,13 +200,32 @@
 
         // Do something with the changed inputs: change food type, drop food, change blob color
         function handleChanges() {
-            // const suffix = this.dataset.sizing || '';
             // Change blob color
             if(this.localName === 'input') {
                 document.documentElement.style.setProperty(`--${this.name}`, this.value);
             }
-            if(this.localName === 'select') return;
-            if(this.localName === 'button') return;
+            
+            // Select food
+            if(this.localName === 'select') {
+                // Reset CSS variables to display: none.
+                document.documentElement.style.setProperty(`--${this[1].value}`, 'none');
+                document.documentElement.style.setProperty(`--${this[2].value}`, 'none');
+                document.documentElement.style.setProperty(`--${this[3].value}`, 'none');
+
+                // Reset position of food
+                document.documentElement.style.setProperty('--position', '0px');
+
+                // Check for the food type.
+                const food = this.options.selectedIndex;
+                food === 1 ? document.documentElement.style.setProperty(`--${this[1].value}`, 'block') :
+                food === 2 ? document.documentElement.style.setProperty(`--${this[2].value}`, 'block') :
+                food === 3 ? document.documentElement.style.setProperty(`--${this[3].value}`, 'block') : null;
+            }
+
+            // Drop food
+            if(this.localName === 'button') {
+                document.documentElement.style.setProperty('--drop', '0px');
+            }
         }
 
         // Listen for changes to the inputs
