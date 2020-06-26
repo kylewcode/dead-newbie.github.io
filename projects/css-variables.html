@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="page-container">
+        <img src="../images/nuclear-explosion.jpg" alt="">
         <div class="controls">
             <label>Blob Color
                 <input type="color" class="blob-color" name="base" value="#ff6347">
@@ -14,9 +15,9 @@
             <label for="food-select">Food Type</label>
             <select name="food" id="food-select">
                 <option value="">Choose food!</option>
-                <option value="type-human" data-reset="0px">Human</option>
-                <option value="type-cow" data-reset="0px">Cow</option>
-                <option value="type-nuke" data-reset="0px">Nuke</option>
+                <option value="type-human">Human</option>
+                <option value="type-cow">Cow</option>
+                <option value="type-nuke">Nuke</option>
             </select>
             <label for="drop-food">Feed it!</label>
             <button id="drop-food">Drop Food</button>
@@ -61,7 +62,7 @@
         body {
             line-height: 1;
         }
-
+        
         /* CSS Variables */
         :root {
             --base: #ff6347;
@@ -69,7 +70,10 @@
             --type-human: none;
             --type-cow: none;
             --type-nuke: none;
+            --type-blob: block;
             --position: -100px;
+            --scale: 1;
+            --nuke: none;
         }
         
         /* Initial Styles */
@@ -87,6 +91,12 @@
         input, select, button {
             display: block;
             margin: 40px auto;
+        }
+
+        img {
+            width: 100vw;
+            position: absolute;
+            display: var(--nuke);
         }
         
         .page-container {
@@ -127,18 +137,19 @@
         
         /* Object Styles */
         .blob {
-            visibility: hidden;
-            width: 300px;
-            height: 300px;
+            display: var(--type-blob);
+            visibility: visible;
+            width: 500px;
+            height: 100px;
             position: absolute;
             bottom: 10%;
             left: 50%;
             background-color: var(--base);
-            border-radius: 50%;
+            border-radius: 50% 50% 20% 20%;
             z-index: 1;
             transform: translateX(var(--move));
         }
-
+        
         .human {
             display: var(--type-human);
             width: 50px;
@@ -149,7 +160,7 @@
             top: var(--position);
             z-index: auto;
         }
-
+        
         .cow {
             display: var(--type-cow);
             width: 100px;
@@ -171,35 +182,51 @@
             top: var(--position);
             z-index: auto;
         }
-
+        
         /* Animations */
-        .human, .cow, .nuke {
-            animation-duration: 3s;
+        .animate {
+            animation-duration: 2s;
             animation-name: fallin;
-            animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation-timing-function: cubic-bezier(.59,-0.03,1,.3);
         }
-
+        
         @keyframes fallin {
             from {
                 transform: scale(0.1);
-                top: 0px;
+                top: -100px;
             }
-
+            
             to {
                 transform: scale(1);
                 top: 500px;
             }
         }
-
-
+        
+        .grow {
+            transform: scale(var(--scale));
+            transition: all 2s linear;
+        }
+        
     </style>
     
     <script>
-        // How can I do this all using a single handleChange function?
+        // Select inputs to listen for changes.
         const inputs = document.querySelectorAll('.controls input, .controls select, .controls button');
-
+        
+        // Objects needed to be animated.
+        const foodObjects = document.querySelectorAll('.sky > div');
+        const blob = document.querySelector('.blob');
+        
+        // Scale value needed to increase size of the blob.
+        function getScaleFactor() {
+            const scaleFactorString = getComputedStyle(document.documentElement).getPropertyValue('--scale');
+            const scaleFactorNum = parseFloat(scaleFactorString);
+            return scaleFactorNum;
+        }
+        
         // Do something with the changed inputs: change food type, drop food, change blob color
         function handleChanges() {
+            
             // Change blob color
             if(this.localName === 'input') {
                 document.documentElement.style.setProperty(`--${this.name}`, this.value);
@@ -207,46 +234,55 @@
             
             // Select food
             if(this.localName === 'select') {
-                // Reset CSS variables to display: none.
+                // Reset CSS variables to display: none. Hides all food.
                 document.documentElement.style.setProperty(`--${this[1].value}`, 'none');
                 document.documentElement.style.setProperty(`--${this[2].value}`, 'none');
                 document.documentElement.style.setProperty(`--${this[3].value}`, 'none');
-
-                // Reset position of food
-                document.documentElement.style.setProperty('--position', '0px');
-
-                // Check for the food type.
+                
+                // Reset position of food.
+                document.documentElement.style.setProperty('--position', '-100px');
+                
+                // Unhides the selected food type.
                 const food = this.options.selectedIndex;
                 food === 1 ? document.documentElement.style.setProperty(`--${this[1].value}`, 'block') :
                 food === 2 ? document.documentElement.style.setProperty(`--${this[2].value}`, 'block') :
                 food === 3 ? document.documentElement.style.setProperty(`--${this[3].value}`, 'block') : null;
             }
-
+            
             // Drop food
             if(this.localName === 'button') {
-                document.documentElement.style.setProperty('--drop', '0px');
+                // Get the type of food to drop. Need element to add CSS class to.
+                const foodType = document.querySelector('select').selectedOptions[0].text.toLowerCase();
+                // Drop the food. Add CSS class .animate
+                const foodObject = document.querySelector(`.${foodType}`);
+                foodObject.classList.add('animate');
             }
         }
-
+        
+        // Remove animation, and and grow the blob
+        foodObjects.forEach(object => {
+            object.addEventListener('animationend', () => {
+                // Check for nuke object
+                if(object.className === 'nuke animate') {
+                    document.documentElement.style.setProperty('--nuke', 'block');
+                    document.documentElement.style.setProperty('--type-blob', 'none');
+                    setTimeout(() => alert('Kaboom! Reload the page.'), 500);
+                    return;
+                }
+                const num = getScaleFactor();
+                object.classList.remove('animate');
+                document.documentElement.style.setProperty('--scale', `${num + 0.5}`);
+                blob.classList.add('grow');
+            });
+        });
+        
         // Listen for changes to the inputs
         inputs.forEach(input => {
             if(input.localName === 'input' || input.localName === 'select') input.addEventListener('change', handleChanges);
             if(input.localName === 'button') input.addEventListener('click', handleChanges);
-            });
-
-
-        // // Grab inputs.
-        // const colorPicker = document.querySelector('input[type="color"]');
-
-        // // Change color of the blob.
-        // function handleColorPicker(e) {
-        //     console.log(e.target.value);
-        //     e.target.value
-        // }
-
-        // // Listen for change to color picker.
-        // colorPicker.addEventListener('change', handleColorPicker);
-    </script>
+        });
+        </script>
+        
+    </body>
+    </html>
     
-</body>
-</html>
