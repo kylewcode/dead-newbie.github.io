@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+</head>
+<body>
+    <h1>Enter the secret code...(it's "booya")</h1>
+<script>
+    const pressed = [];
+    const secretCode = 'booya';
+    const h1 = document.querySelector('h1');
+
+    window.addEventListener('keyup', (e) => {
+        pressed.push(e.key);
+        pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+        // Does this contain the secret code?
+        if(pressed.join('') === secretCode) {
+            const p = document.createElement('p');
+            p.innerText = 'GOOD JOB!';
+            h1.appendChild(p);
+        };
+    })
+</script>
+</body>
+</html>
