@@ -21,15 +21,16 @@ function skip() {
     video.currentTime += parseFloat(this.dataset.skip);
 }
 
-function handleRangeUpdate(e) {
-    // if(e.buttons === 1 || e.key.includes('Arrow')){ 
-    //     video[this.name] = this.value;
-    // }
-    
-    if(e.buttons === 1) {video[this.name] = this.value}
-    if(e.key) {
-        if(e.key.includes('Arrow')) {video[this.name] = this.value}
-    }
+function updateVideo(element) {
+    video[element.name] = element.value
+}
+
+function onKeyUp(e) {
+    if(e.key.includes('Arrow')) updateVideo(this);
+}
+
+function onMouseMove(e) {
+    if(e.buttons === 1) updateVideo(this);
 }
 
 function handleProgress() {
@@ -46,12 +47,9 @@ toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(element => {
     element.addEventListener('click', skip);
 });
-// ranges.forEach(element => {
-//     element.addEventListener('change', handleRangeUpdate);
-// });
 ranges.forEach(element => {
-    element.addEventListener('mousemove', handleRangeUpdate);
+    element.addEventListener('mousemove', onMouseMove);
 });
 ranges.forEach(element => {
-    element.addEventListener('keyup', handleRangeUpdate);
+    element.addEventListener('keyup', onKeyUp);
 });
