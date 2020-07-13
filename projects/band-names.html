@@ -46,19 +46,13 @@
     <ul id="bands"></ul>
     
     <script>
+        // I can reduce time complexity by storing the stripped band names to an object
+        // and also removing the article before sorting.
         const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
         const removalWords = ['The ', 'A ', 'An '];
         const bandsList = document.querySelector('#bands');
-        
-        // Sort the band names alphabetically without using articles.
-        function sortBands(bands) {
-            return bands.sort((a, b) => {
-                return  removeArticle(a) > removeArticle(b) ? 1 : -1;
-            });
-        }
-        
+
         function removeArticle(bandName) { 
-            // Remove the article.
             for (let i = 0; i < removalWords.length; i++) {
                 const word = removalWords[i];
                 if(bandName.startsWith(word)) {
@@ -67,17 +61,26 @@
             }
             return bandName;
         };
-        
+
         // Display data
         function displayData(bands, bandsList) {
             let html = '';
             bands.forEach(element => {
-                html += `<li>${element}</li>`;
+                html += `<li>${element.name}</li>`;
             });
             bandsList.innerHTML = html;
         }
 
-        const sortedBands = sortBands(bands);
+        // Convert string array to object array.
+        const bandObjs = bands.map(band => {
+            return { name: band, stripped: removeArticle(band) };
+        });
+        
+        // Sort the band names alphabetically without using articles.
+        const sortedBands = bandObjs.sort((a, b) => {
+                return a.stripped > b.stripped ? 1 : -1;
+        });
+        
         displayData(sortedBands, bandsList);
     </script>
     
