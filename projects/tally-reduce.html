@@ -5,6 +5,7 @@
     <title>Videos</title>
 </head>
 <body>
+    <p>Open the console to see the total running time of all videos.</p>
     <ul class="videos">
         <li data-time="5:43">
             Video 1
@@ -184,10 +185,30 @@
     <script>
 
         const timeNodes = [...document.querySelectorAll('[data-time]')];
-        const seconds = timeNodes.map(node => node.dataset.time)
 
-        console.log(timeNodes);
-        console.log(seconds);
+        const seconds = timeNodes
+            .map(node => node.dataset.time)
+            .map(timeCode => {
+                // Get the minute and second values.
+                const min = parseInt(timeCode.split(':')[0], 10);
+                const sec = parseInt(timeCode.split(':')[1], 10);
+                return totalSec = (min * 60) + sec;
+            });
+
+        const totalSeconds = seconds.reduce((acc, cv) => acc + cv);
+        
+        // Convert total seconds into hours, minutes, and seconds.
+        function convertTime(sec) {
+            let secondsLeft = sec;
+            const hours = Math.floor(sec / 3600);
+            secondsLeft = Math.floor(((sec / 3600) - hours) * 3600);
+            const minutes = Math.floor(secondsLeft / 60);
+            secondsLeft = Math.floor(((secondsLeft / 60) - minutes) * 60);
+            return `The total running time is ${hours} hours, ${minutes} minutes, and ${secondsLeft} seconds.`;
+        };
+
+        const convertedTime = convertTime(totalSeconds);
+        console.log(convertedTime);
     </script>
 </body>
 </html>
