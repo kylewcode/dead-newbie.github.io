@@ -68,8 +68,8 @@ html {
     height: 20rem;
   }
   
-  input[type="select"] {
-  
+  .voiceinator input[type="checkbox"] {
+    align-items: flex-start;
   }
   
   .voiceinator button {
