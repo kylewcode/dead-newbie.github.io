@@ -227,7 +227,9 @@
         function handleEnter() {
             this.classList.add('trigger-enter');
             setTimeout(() => {
-                this.classList.add('trigger-enter-active');
+                if(this.classList.contains('trigger-enter')) {
+                    this.classList.add('trigger-enter-active');
+                }
             }, 150);
             background.classList.add('open');
 
@@ -236,11 +238,16 @@
             const navCoordinates = nav.getBoundingClientRect();
             const coordinates = {
                 width: dropCoordinates.width,
-                height: dropCoordinates.height
+                height: dropCoordinates.height,
+                top: dropCoordinates.top - navCoordinates.top,
+                left: dropCoordinates.left - navCoordinates.left
             };
 
             background.style.setProperty('width', `${coordinates.width}px`);
             background.style.setProperty('height', `${coordinates.height}px`);
+            background.style.setProperty('transform',
+             `translate(${coordinates.left}px, ${coordinates.top}px)`
+             );
         }
         
         function handleLeave() {
