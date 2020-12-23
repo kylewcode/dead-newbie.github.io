@@ -9,6 +9,7 @@
 }
 
 .project-tile {
+    border-radius: 25px;
     text-align: center;
     background-color: lightgray;
     box-shadow: 17px 11px 30px -15px rgba(0,0,0,0.75);
