@@ -174,13 +174,13 @@ input[type="submit"] {
 
 footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background: lightgray;
     margin-top: 30px;
 }
 
 .footer-container {
-    margin-right: 15px;
+    text-align: center;
 }
 
 footer li {
@@ -232,10 +232,10 @@ footer p {
 
 @media (max-width: 425px) {
     
-    /*Mobile large header styles*/
+    /* Mobile large header styles */
     
-    header {
-        padding: 10px 0px 0px 0px;  
+    .logo {
+        width: 60px;
     }
     
     /*Mobile large description list styles*/
@@ -259,4 +259,9 @@ footer p {
         text-align: center;
     }
     
+    /* Misc */
+
+    ul {
+        padding-inline-start: 0px;
+    }
 }
