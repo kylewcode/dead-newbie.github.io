@@ -1,110 +1,130 @@
 /* Background fixed image */
 
 html {
-    font-size: 20px;
-    font-family: 'Inconsolata', monospace;
-    color: rgb(255, 255, 255);
-    background: url(/images/code-colored-screen-1080w.jpeg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover;
+  font-size: 20px;
+  font-family: "Inconsolata", monospace;
+  color: rgb(255, 255, 255);
+  background: url(/images/code-colored-screen-1080w.jpeg) no-repeat center
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /* General text styling */
 
 h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2em;
-    text-align: center;
-    margin-top: 40px;
+  font-family: "Inter", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin-top: 40px;
 }
 
 select {
-    color: rgb(255, 255, 255);
-    background-color: rgb(145, 145, 145);
+  color: rgb(255, 255, 255);
+  background-color: rgb(145, 145, 145);
 }
 
-input, textarea {
-    border-radius: 4px;
+input,
+textarea {
+  border-radius: 4px;
 }
 
-h2, label {
-    font-size: 1em;
+h2,
+label {
+  font-size: 1em;
 }
 
 h1 + p {
-    font-size: 1em;
-    text-align: center;
-    margin-top: -10px;
-    font-style: italic;
+  font-size: 1em;
+  text-align: center;
+  margin-top: -10px;
+  font-style: italic;
 }
 
 .small-text {
-    font-size: 0.8em;
+  font-size: 0.8em;
 }
 
 /*Form styling and layout*/
 
 form {
-    display: flex;
-    flex-flow: column;
-    background: rgba(51, 62, 153, 0.5);
-    border-radius: 3px;
-    margin: auto 40px;
-    padding: 30px 40px;
+  display: flex;
+  flex-flow: column;
+  background: rgba(51, 62, 153, 0.5);
+  border-radius: 3px;
+  margin: auto 40px;
+  padding: 30px 40px;
 }
 
 label {
-    display: block;
-    margin: 5px 0px;
+  display: block;
+  margin: 5px 0px;
 }
 
-input[type="text"], input[type="email"] {
-    margin-bottom: 10px;
+input[type="text"],
+input[type="email"] {
+  margin-bottom: 10px;
 }
 
 h2 {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .radio-buttons label {
-    display: inline;
+  display: inline;
 }
 
 .radio-buttons input {
-    margin: 10px auto;
+  margin: 10px auto;
 }
 
 .checkboxes > input {
-    margin: 10px 0px;
+  margin: 10px 0px;
 }
 
 .checkboxes {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 input[type="submit"] {
-    margin-top: 30px;
-    background-color: rgb(86, 179, 86);
-    color: white;
-    font: 1em bold;
-    height: 50px;
-    width: 100%;
-    border: none;
-    border-radius: 4px;
+  margin-top: 30px;
+  background-color: rgb(86, 179, 86);
+  color: white;
+  font: 1em bold;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
 }
 
 /*Responsive Styles*/
 
 @media (max-width: 425px) {
-    main > p {
-        margin: 30px;
-    }
+  main > p {
+    margin: 30px;
+  }
 
-    form {
-        background: none;
-        margin: auto;
-        padding: 1em;
-    }
+  form {
+    background: none;
+    margin: auto;
+    padding: 1em;
+  }
+}
+
+@media (min-width: 426px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    width: 25vw;
+  }
+
+  form {
+    align-items: center;
+  }
+
+  textarea {
+    width: 50vw;
+  }
 }
