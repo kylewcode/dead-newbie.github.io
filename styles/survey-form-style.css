@@ -10,9 +10,19 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: relative;
 }
 
 /* General text styling */
+
+body {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 h1 {
   font-family: "Inter", sans-serif;
@@ -131,4 +141,10 @@ input[type="submit"] {
   textarea {
     width: 50vw;
   }
+}
+
+@media (min-width: 2560px) {
+    form {
+        height: 80vh;
+    }
 }
