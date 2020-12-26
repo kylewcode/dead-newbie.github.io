@@ -1,6 +1,6 @@
 /* -----Project Page Styles----- */
 
-.projects-grid {
+.fcc-web-design-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
@@ -16,32 +16,40 @@
     padding-bottom: 4em;
 }
 
-.projects-grid p {
+.fcc-web-design-grid p {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 3em;
     color: rgb(68, 68, 68);
 }
 
-.projects-grid img {
+.fcc-web-design-grid img {
     max-width: 300px;
+}
+
+.fcc-web-design-grid h3 {
+    font-size: 3em;
+}
+
+.fcc-web-design-grid .project-tile:first-child{
+    background-color: rgb(65, 65, 65);
 }
 
 /* Responsive Project Page Styles */
 
 @media (max-width: 1214px) {
-    .projects-grid {
+    .fcc-web-design-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 826px) {
-    .projects-grid {
+    .fcc-web-design-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 398px) {
-    .projects-grid {
+    .fcc-web-design-grid {
         padding: 0px;
     }
 
