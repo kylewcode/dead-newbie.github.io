@@ -5,10 +5,15 @@ html {
   font-family: "Nunito", sans-serif;
 }
 
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+}
 /*General styles*/
 
 main {
   margin-top: 210px;
+  padding-bottom: 60px;
 }
 
 iframe {
@@ -180,7 +185,9 @@ footer {
   display: flex;
   justify-content: center;
   background: lightgray;
-  margin-top: 30px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-container {

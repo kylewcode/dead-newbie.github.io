@@ -18,127 +18,129 @@
   </head>
 
   <body>
-    <header id="header">
-      <a href="#">
-        <div class="logo">
-          <img
-            id="header-img"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Antu_intel-installer.svg/512px-Antu_intel-installer.svg.png"
-            alt="Intel logo"
-          />
-        </div>
-      </a>
-      <nav id="nav-bar">
-        <ul class="nav">
-          <li><a class="nav-link" href="#description-list">Features</a></li>
-          <li><a class="nav-link" href="#video">How It Works</a></li>
-          <li><a class="nav-link" href="#pricing">Pricing</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <!--Email capture form-->
-      <form id="form" action="https://www.freecodecamp.com/email-submit">
-        <label>Machinecrafted, divine-made masterpieces</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email address"
-          required
-        />
-        <input type="submit" id="submit" value="GET STARTED" />
-      </form>
-
-      <!--Product description list-->
-      <div class="grid" id="description-list">
-        <img
-          class="list-image"
-          src="https://freesvg.org/img/pgb-chip-generic.png"
-          alt="Graphic of a computer chip"
-        />
-        <dl>
-          <dt>Premium Materials</dt>
-          <dd>
-            Our microchips use the shiniest silicon which is sourced globally.
-            This will increase the longevity of your purchase.
-          </dd>
-        </dl>
-        <img
-          class="list-image"
-          src="https://freesvg.org/img/pgb-chip-crypto-3.png"
-          alt=""
-        />
-        <dl>
-          <dt>Fast Shipping</dt>
-          <dd>
-            We make sure you recieve your chip as soon as we have finished
-            making it. We also provide free returns if you are not satisfied.
-          </dd>
-        </dl>
-        <img
-          class="list-image"
-          src="https://storage.needpix.com/rsynced_images/chip-308574_1280.png"
-          alt=""
-        />
-        <dl>
-          <dt>Quality Assurance</dt>
-          <dd>
-            For every purchase you make, we will ensure there are no damages or
-            faults and we will check and test the pitch of your instrument.
-          </dd>
-        </dl>
+      <div class="wrapper">
+          <header id="header">
+            <a href="#">
+              <div class="logo">
+                <img
+                  id="header-img"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Antu_intel-installer.svg/512px-Antu_intel-installer.svg.png"
+                  alt="Intel logo"
+                />
+              </div>
+            </a>
+            <nav id="nav-bar">
+              <ul class="nav">
+                <li><a class="nav-link" href="#description-list">Features</a></li>
+                <li><a class="nav-link" href="#video">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+              </ul>
+            </nav>
+          </header>
+      
+          <main>
+            <!--Email capture form-->
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+              <label>Machinecrafted, divine-made masterpieces</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <input type="submit" id="submit" value="GET STARTED" />
+            </form>
+      
+            <!--Product description list-->
+            <div class="grid" id="description-list">
+              <img
+                class="list-image"
+                src="https://freesvg.org/img/pgb-chip-generic.png"
+                alt="Graphic of a computer chip"
+              />
+              <dl>
+                <dt>Premium Materials</dt>
+                <dd>
+                  Our microchips use the shiniest silicon which is sourced globally.
+                  This will increase the longevity of your purchase.
+                </dd>
+              </dl>
+              <img
+                class="list-image"
+                src="https://freesvg.org/img/pgb-chip-crypto-3.png"
+                alt=""
+              />
+              <dl>
+                <dt>Fast Shipping</dt>
+                <dd>
+                  We make sure you recieve your chip as soon as we have finished
+                  making it. We also provide free returns if you are not satisfied.
+                </dd>
+              </dl>
+              <img
+                class="list-image"
+                src="https://storage.needpix.com/rsynced_images/chip-308574_1280.png"
+                alt=""
+              />
+              <dl>
+                <dt>Quality Assurance</dt>
+                <dd>
+                  For every purchase you make, we will ensure there are no damages or
+                  faults and we will check and test the pitch of your instrument.
+                </dd>
+              </dl>
+            </div>
+      
+            <!--Video embed-->
+      
+            <iframe
+              id="video"
+              height="315"
+              src="https://www.youtube.com/embed/-ihRPi4wcBY"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+      
+            <!--Product pricing boxes-->
+            <div class="products-flex" id="pricing">
+              <div class="product-box">
+                <p class="product-title">BRONZE CHIP</p>
+                <p class="product-price">$600</p>
+                <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
+                <div class="purchase-bttn">
+                  <button>SELECT</button>
+                </div>
+              </div>
+              <div class="product-box">
+                <p class="product-title">GOLD CHIP</p>
+                <p class="product-price">$900</p>
+                <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
+                <div class="purchase-bttn">
+                  <button>SELECT</button>
+                </div>
+              </div>
+              <div class="product-box">
+                <p class="product-title">PLATINUM CHIP</p>
+                <p class="product-price">$1200</p>
+                <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
+                <div class="purchase-bttn">
+                  <button>SELECT</button>
+                </div>
+              </div>
+            </div>
+          </main>
+      
+          <footer>
+            <div class="footer-container">
+              <ul>
+                <li>Privacy</li>
+                <li>Terms</li>
+                <li>Contact</li>
+              </ul>
+              <p>Copyright 2020, Intel Corp.</p>
+            </div>
+          </footer>
       </div>
-
-      <!--Video embed-->
-
-      <iframe
-        id="video"
-        height="315"
-        src="https://www.youtube.com/embed/-ihRPi4wcBY"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-
-      <!--Product pricing boxes-->
-      <div class="products-flex" id="pricing">
-        <div class="product-box">
-          <p class="product-title">BRONZE CHIP</p>
-          <p class="product-price">$600</p>
-          <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
-          <div class="purchase-bttn">
-            <button>SELECT</button>
-          </div>
-        </div>
-        <div class="product-box">
-          <p class="product-title">GOLD CHIP</p>
-          <p class="product-price">$900</p>
-          <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
-          <div class="purchase-bttn">
-            <button>SELECT</button>
-          </div>
-        </div>
-        <div class="product-box">
-          <p class="product-title">PLATINUM CHIP</p>
-          <p class="product-price">$1200</p>
-          <p>Lorem ipsum. Lorem ipsum. Lorem ipsum dolor. Lorem ipsum.</p>
-          <div class="purchase-bttn">
-            <button>SELECT</button>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer-container">
-        <ul>
-          <li>Privacy</li>
-          <li>Terms</li>
-          <li>Contact</li>
-        </ul>
-        <p>Copyright 2020, Intel Corp.</p>
-      </div>
-    </footer>
   </body>
 </html>
