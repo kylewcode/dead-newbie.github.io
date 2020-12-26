@@ -68,6 +68,10 @@ input[type="email"] {
   margin-bottom: 10px;
 }
 
+.submit-button {
+    text-align: center;
+}
+
 h2 {
   margin-bottom: 8px;
 }
@@ -94,7 +98,7 @@ input[type="submit"] {
   color: white;
   font: 1em bold;
   height: 50px;
-  width: 100%;
+  width: 100px;
   border: none;
   border-radius: 4px;
 }
