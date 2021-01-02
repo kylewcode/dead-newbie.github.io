@@ -1,14 +1,15 @@
 /*Global Styles*/
 
 html {
-  font-family: 'Coda', cursive;
+  font-family: "Coda", cursive;
   /*background: #4C4C4C;*/
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 body {
   margin: 0px;
-  background: url(/images/keyboard-large-closeup-dark-1920w.jpeg) no-repeat center center fixed; 
+  background: url(/images/keyboard-large-closeup-dark-1920w.jpeg) no-repeat
+    center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,14 +38,14 @@ h3 {
 }
 
 p {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.5em;
   text-align: center;
   margin: 30px 0px;
 }
 
 a {
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -57,7 +58,7 @@ a {
   left: 0;
   display: flex;
   justify-content: center;
-  background: #882E2E;
+  background: #882e2e;
 }
 
 ul {
@@ -85,21 +86,21 @@ li:last-child {
 }
 
 #projects {
-  background: #2E5B88;
+  background: #2e5b88;
   padding-bottom: 80px;
 }
 
 #projects h2 {
   padding-top: 75px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #CECECE
+  border-bottom: 1px solid #cecece;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 40px;
-  margin: 100px 40px;
+  gap: 80px;
+  margin: 80px 40px;
   justify-items: center;
 }
 
@@ -113,10 +114,11 @@ li:last-child {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: #14283C;
+  background: #14283c;
 }
 
-img[src*="https://live"] {
+img[src*="https://live"]
+{
   object-fit: cover;
   object-position: -25px 10px;
 }
@@ -137,7 +139,7 @@ img[src*="https://live"] {
 
 .show-all-bttn a {
   text-decoration: none;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1em;
 }
 
@@ -169,7 +171,7 @@ img[src*="https://live"] {
 /*Footer styles*/
 
 footer {
-  border-top: 3px solid #882E2E;
+  border-top: 3px solid #882e2e;
 }
 
 footer p {
@@ -187,7 +189,7 @@ footer p {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     font-size: 5em;
-    content: '\f063';
+    content: "\f063";
     display: block;
     text-align: center;
     margin-top: 40px;
@@ -197,7 +199,7 @@ footer p {
     font-family: unset;
     font-weight: unset;
     font-size: unset;
-    content: '';
+    content: "";
     display: unset;
     text-align: unset;
     margin-top: unset;
@@ -214,6 +216,30 @@ footer p {
   p {
     font-size: 1.25em;
   }
+}
+
+@media (min-width: 1440px) {
+
+  h1 {
+    font-size: 6em;
+  }
+
+  h2 {
+    font-size: 4em;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 3em;
+  }
+
+  nav a {
+    font-size: 2em;
+  }
+
 }
 
 /*Tablet styles*/
