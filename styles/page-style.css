@@ -143,15 +143,25 @@ h5 {
 
 .resume-content ul {
   font-size: 1.5em;
-  line-height: 2em;
+  line-height: 1.5em;
   margin-top: 0px;
 }
 
 .resume-content span,
 .resume-content .skill-titles {
   font-weight: bold;
-  font-size: 15px;
-  color: rgb(0, 120, 215);
+  font-size: 1em;
+  font-style: italic;
+}
+
+.resume-content .bold {
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.resume-content a {
+  font-size: 1em;
 }
 
 /*Resume Download Box*/
