@@ -37,7 +37,7 @@
 
 .fcc-web-design-grid p,
 .js-30-grid p {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 3em;
   color: rgb(68, 68, 68);
 }
@@ -70,7 +70,7 @@
   }
 
   .js-30-grid .project-tile {
-      width: 300px;
+    width: 300px;
   }
 }
 
@@ -170,7 +170,7 @@ h5 {
   background-color: rgb(212, 212, 212);
   border-radius: 10px;
   width: max-content;
-  margin: 0px auto;
+  margin: 60px auto;
   padding: 1.5em;
   text-align: center;
 }
